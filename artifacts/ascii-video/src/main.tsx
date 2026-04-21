@@ -2,4 +2,10 @@ import { createRoot } from "react-dom/client";
 import App from "./App";
 import "./index.css";
 
-createRoot(document.getElementById("root")!).render(<App />);
+const mountEl =
+  document.getElementById("ascii-tool-root") ||
+  document.getElementById("root");
+
+if (mountEl) {
+  createRoot(mountEl).render(<App />);
+}
